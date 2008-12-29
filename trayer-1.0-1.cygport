@@ -1,0 +1,18 @@
+DESCRIPTION="GTK+ system tray"
+HOMEPAGE="http://fvwm-crystal.org/"
+SRC_URI="http://download.gna.org/fvwm-crystal/${PN}/${P}.tar.gz"
+PATCH_URI="
+	1.0-as-needed.patch
+	1.0-deprecations.patch
+"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake -j1 DEVEL=1 PREFIX=/usr
+}
+
+src_install() {
+	cd ${B}
+	cyginstall PREFIX=${D}/usr
+}

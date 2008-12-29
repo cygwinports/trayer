@@ -1,0 +1,11 @@
+--- origsrc/trayer-1.0/Makefile	2005-02-18 15:38:28.000000000 -0600
++++ src/trayer-1.0/Makefile	2008-12-29 01:24:05.643750000 -0600
+@@ -36,7 +36,7 @@
+ 
+ TARGET = trayer
+ $(TARGET): $(OBJ) $(SYSTRAYOBJ)
+-	$(CC) $(LDFLAGS) $(LIBS) $(OBJ) $(SYSTRAYOBJ) -o $@
++	$(CC) $(LDFLAGS) $(OBJ) $(SYSTRAYOBJ) $(LIBS) -o $@
+ ifeq (,$(DEVEL))
+ 	strip $@
+ endif
