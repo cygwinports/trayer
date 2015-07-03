@@ -1,0 +1,25 @@
+NAME="trayer"
+VERSION=1.0
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="GTK+ system tray"
+DESCRIPTION="trayer is small program designed to provide systray functionality
+present in GNOME/KDE desktop enviroments for window managers which do not
+support that function."
+HOMEPAGE="http://fvwm-crystal.org/"
+SRC_URI="http://download.gna.org/fvwm-crystal/trayer/trayer-${VERSION}.tar.gz"
+PATCH_URI="
+	1.0-as-needed.patch
+	1.0-deprecations.patch
+"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake -j1 DEVEL=1 PREFIX=/usr
+}
+
+src_install() {
+	cd ${B}
+	cyginstall PREFIX=${D}/usr
+}
