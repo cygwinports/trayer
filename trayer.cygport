@@ -1,20 +1,19 @@
 NAME="trayer"
-VERSION=1.1
+VERSION=1.1.6
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="GTK+ system tray"
 DESCRIPTION="trayer is small program designed to provide systray functionality
 present in GNOME/KDE desktop enviroments for window managers which do not
 support that function."
-HOMEPAGE="https://code.google.com/p/trayer/"
-SRC_URI="https://trayer.googlecode.com/files/trayer-${VERSION}.tgz"
-PATCH_URI="
-	1.0-as-needed.patch
-"
+HOMEPAGE="https://github.com/sargon/trayer-srg"
+SRC_URI="${HOMEPAGE}/archive/trayer-${VERSION}.tar.gz"
+SRC_DIR="trayer-srg-trayer-${VERSION}"
 
 src_compile() {
 	lndirs
 	cd ${B}
+	rm -f config.h Makefile.config
 	echo '#define PREFIX "/usr"' > config.h
 	touch Makefile.config
 	cygmake -j1 CFLAGS="${CFLAGS}" DEVEL=1 PREFIX=/usr
