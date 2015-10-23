@@ -4,7 +4,7 @@ RELEASE=1
 CATEGORY="X11"
 SUMMARY="GTK+ system tray"
 DESCRIPTION="trayer is small program designed to provide systray functionality
-present in GNOME/KDE desktop enviroments for window managers which do not
+present in GNOME/KDE desktop environments for window managers which do not
 support that function."
 HOMEPAGE="https://github.com/sargon/trayer-srg"
 SRC_URI="${HOMEPAGE}/archive/trayer-${VERSION}.tar.gz"
